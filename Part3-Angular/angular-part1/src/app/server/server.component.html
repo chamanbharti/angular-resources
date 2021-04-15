@@ -1,0 +1,11 @@
+<!--string interpolation-->
+
+<!-- <p>The {{'Server'}} with ID {{serverId}} is {{serverStatus}}</p> -->
+<!-- <p>The {{'Server'}} with ID {{serverId}} is {{getServerStatus()}}</p> -->
+
+<!-- Property binding -->
+
+<!-- directive-->
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}">
+The {{'Server'}} with ID {{serverId}} is {{getServerStatus()}}</p>

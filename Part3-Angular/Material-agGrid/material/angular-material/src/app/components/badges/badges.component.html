@@ -1,0 +1,125 @@
+<!--
+
+<div>
+    <span matBadge="5">Notifications</span>
+</div>
+<div>
+    <span matBadge="5" matBadgePosition="below before">Notifications (below before)</span>
+</div>
+<div>
+    <span matBadge="5" matBadgePosition="below after">Notifications(below after)</span>
+</div>
+<div>
+    <span matBadge="5" matBadgePosition="above before">Notifications(above before)</span>
+</div>
+
+<div>
+    <span matBadge="5" matBadgeSize="small">Notifications</span>
+</div>
+<div>
+    <span matBadge="5" matBadgeSize="medium">Notifications</span>
+</div>
+<div>
+    <span matBadge="5" matBadgeSize="large">Notifications</span>
+</div>
+
+<div>
+    <span matBadge="5" matBadgeColor="primary">Notifications primary</span>
+</div>
+<div>
+    <span matBadge="5" matBadgeColor="accent" matBadgeOverlap="false">Notifications accent</span>
+</div>
+<div>
+    <span matBadge="5" matBadgeColor="warn">Notifications warn</span>
+</div>
+
+<div>
+    <span [matBadge]="notification">Notifications Dyanamic</span>
+</div>
+
+<div>
+    <span [matBadge]="notification2" [matBadgeHidden]="notification2===0">Notifications Dyanamic hidden</span>
+</div>
+<div>
+    <span [matBadge]="notification" [matBadgeHidden]="notification2===0">Notifications Dyanamic hidden</span>
+</div> -->
+
+<p>
+    <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+  </p>
+
+  <p>
+      <span matBadge="1" matBadgeSize="large">Text with large badge</span>
+  </p>
+
+  <p>
+    Button with a badge on the left
+    <button mat-raised-button color="primary"
+        matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+      Action
+    </button>
+  </p>
+
+  <p>
+      Button toggles badge visibility
+      <button mat-raised-button matBadge="9"
+      [matBadgeHidden]="hidden"
+       (click)="toggleBadgeVisibility()">
+          Hide
+      </button>
+  </p>
+
+  <p>
+    Icon with a badge
+    <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      <!-- Include text description of the icon's meaning for screen-readers -->
+      <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span>
+  </p>
+
+  <h1>Badge position</h1>
+  <button
+  mat-raised-button color="primary"
+  matBadge="8" matBadgePosition="after"
+  matBadgeColor="accent">
+      Action
+  </button>
+<br>
+  <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+
+  <h1>Badge sizing</h1>
+  <span matBadge="1" matBadgeSize="large">Text with large badge</span>
+
+
+  <h1>Badge visibility</h1>
+<button mat-raised-button matBadge="7"
+[matBadgeHidden]="hidden"
+(click)="toggleBadgeVisibility()"
+aria-describedby="Test">
+    Hide
+</button>
+<br>
+<button [hidden]="hidden">Property Binding</button><br>
+
+<!-- <h1>Theming</h1>
+<mat-icon matBadge="15"
+matBadgeColor="warn">home
+</mat-icon> -->
+
+<h1>Example</h1>
+<button mat-button id="simple"
+[matBadge]="simpleContent"
+>simple</button>
+
+<button mat-button id="overlapping"
+matBadge="O"
+[matBadgeOverlap]="overlap"
+>
+overlapping</button>
+
+<button mat-button id="disabled"
+matBadge="D"
+[matBadgeDisabled]="disabled"
+>
+disabled</button>

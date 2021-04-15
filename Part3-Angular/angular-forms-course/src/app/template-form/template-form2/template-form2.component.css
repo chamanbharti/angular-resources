@@ -1,0 +1,15 @@
+.form-register {
+    width: 300px;
+    padding:20px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    }
+    input.ng-invalid{
+    border:1px solid red;
+    box-shadow: 2px 3px 4px red;
+    }
+    input.ng-valid{
+    border:1px solid green;
+    box-shadow: 2px 3px 4px green;
+   }

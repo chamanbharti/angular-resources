@@ -1,0 +1,478 @@
+<!-- <div class="page-area">
+    <h2>Contact Us</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text left bg-white rounded shadow py-3">
+            <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                <div class="form-group">
+                  <label for="exampleInputUsername1">Username</label>
+                  <input type="text" class="form-control" id="exampleInputUsername1"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" ngModel>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control"
+                  id="exampleInputEmail1" placeholder="Email"
+                  name="email" ngModel>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select class="form-control" id="course"
+                    name="course" ngModel>
+                      <option value="Angular">Angular</option>
+                      <option value="RxJS">RxJS</option>
+                      <option value="HTML5">HTML5</option>
+                      <option value="JavaScript">JavaScript</option>
+                    </select>
+                  </div>
+                  <button class="btn btn-success">submit</button>
+              </form>
+        </div>
+    </div>
+</div> -->
+
+<!--
+<div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Username*</label>
+                <input type="text" class="form-control" id="exampleInputUsername1"
+                aria-describedby="usernameHelp" placeholder="Enter Username"
+                name="username" ngModel required>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email*</label>
+                <input type="email" class="form-control"
+                id="exampleInputEmail1" placeholder="Email"
+                name="email" ngModel required email #email="ngModel">
+                <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+              </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+                </div>
+                <button class="btn btn-success" [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+              <div class="form-group">
+                <label for="username">Username*</label>
+                <input type="text" class="form-control" id="username"
+                aria-describedby="usernameHelp" placeholder="Enter Username"
+                name="username" [(ngModel)]="username" required>
+                <small *ngIf="username">Your username is {{username}}</small>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" class="form-control"
+                id="email" placeholder="Email"
+                name="email" ngModel required email #email="ngModel">
+                <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+              </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+                </div>
+                <button class="btn btn-success" [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+<!-- Grouping form control -->
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+                </div>
+                <button class="btn btn-success" [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+<!-- handling radio buttons -->
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio"
+                   *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}"
+                    [ngModel]="defaultGender"
+                    name="gender" value="{{gender.value}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label"
+                      for="{{gender.id}}">{{gender.value}}
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-success"
+                 [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+
+<!-- setValue() and patchValue() -->
+
+<!-- setValue() -->
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                  <button class="btn-primary btn-sm mt-2"
+                  (click)="setUsername()">Set Username</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio"
+                   *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}"
+                    [ngModel]="defaultGender"
+                    name="gender" value="{{gender.value}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label"
+                      for="{{gender.id}}">{{gender.value}}
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-success"
+                 [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+
+<!-- patchValue() -->
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                  <button class="btn-primary btn-sm mt-2"
+                  (click)="setUsername()">Set Username</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+              </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio"
+                   *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}"
+                    [ngModel]="defaultGender"
+                    name="gender" value="{{gender.value}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label"
+                      for="{{gender.id}}">{{gender.value}}
+                    </label>
+                </div>
+              </div>
+                <button class="btn btn-success"
+                 [disabled]="!myForm.valid">submit</button>
+            </form>
+      </div>
+  </div>
+</div> -->
+
+
+<!-- Extract & Use Form Data -->
+<!-- <div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                  <button class="btn-primary btn-sm mt-2"
+                  (click)="setUsername()">Set Username</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+              </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio"
+                   *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}"
+                    [ngModel]="defaultGender"
+                    name="gender" value="{{gender.value}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label"
+                      for="{{gender.id}}">{{gender.value}}
+                    </label>
+                </div>
+                </div>
+                <button class="btn btn-success"
+                 [disabled]="!myForm.valid">submit
+                </button>
+          </form>
+      </div>
+  </div>
+  <div class="row justify-content-center mt-2" *ngIf="submitted">
+    <div class="col-md-6 text-left bg-white rounded shadow py-3">
+      <h2>Form Data</h2>
+      {{formData | json}}
+      <p>Username:<strong>{{formData.username}}</strong></p>
+      <p>Email:<strong>{{formData.email.value}}</strong></p>
+      <p>Course:<strong>{{formData.course}}</strong></p>
+      <p>Gender:<strong>{{formData.gender}}</strong></p>
+    </div>
+  </div>
+</div> -->
+
+<!-- Reset the Form -->
+<div class="page-area">
+  <h2>Contact Us</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-6 text left bg-white rounded shadow py-3">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+
+                <div class="form-group">
+                  <label for="username">Username*</label>
+                  <input type="text" class="form-control" id="username"
+                  aria-describedby="usernameHelp" placeholder="Enter Username"
+                  name="username" [(ngModel)]="username" required>
+                  <small *ngIf="username">Your username is {{username}}</small>
+                  <button class="btn-primary btn-sm mt-2"
+                  (click)="setUsername()">Set Username</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" class="form-control"
+                  id="email" placeholder="Email"
+                  name="email" ngModel required email #email="ngModel">
+                  <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+                </div>
+
+                <small class="text-danger" *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                  <label for="course">Select Course</label>
+                  <select class="form-control" id="course"
+                  name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="RxJS">RxJS</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="JavaScript">JavaScript</option>
+                  </select>
+              </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio"
+                   *ngFor="let gender of genders">
+                    <input type="radio" id="{{gender.id}}"
+                    [ngModel]="defaultGender"
+                    name="gender" value="{{gender.value}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label"
+                      for="{{gender.id}}">{{gender.value}}
+                    </label>
+                </div>
+                </div>
+                <button class="btn btn-success"
+                 [disabled]="!myForm.valid">submit
+                </button>
+          </form>
+      </div>
+  </div>
+  <div class="row justify-content-center mt-2" *ngIf="submitted">
+    <div class="col-md-6 text-left bg-white rounded shadow py-3">
+      <h2>Form Data</h2>
+      {{formData | json}}
+      <p>Username:<strong>{{formData.username}}</strong></p>
+      <p>Email:<strong>{{formData.email}}</strong></p>
+      <p>Course:<strong>{{formData.course}}</strong></p>
+      <p>Gender:<strong>{{formData.gender}}</strong></p>
+    </div>
+  </div>
+</div>

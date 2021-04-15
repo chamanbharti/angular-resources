@@ -1,0 +1,13 @@
+<div class="page-area">
+    <h2>About Us</h2>
+    <p>This is demo site to display router of angular</p>
+
+    <!-- <app-ng-for></app-ng-for> -->
+    <!-- for sending data to child app-comp1 -->
+    <input type="text" placeholder="Enter here" #val>
+    <button (click)="submitValue(val)">Submit Value</button>
+    <app-comp1 *ngIf="comp1Exist" [myValue]="myValue">ngContent: {{myValue}}</app-comp1>
+    <br>
+    <br>
+    <button class="btn btn-danger" (click)="destroy()">Destroy Component</button>
+</div>

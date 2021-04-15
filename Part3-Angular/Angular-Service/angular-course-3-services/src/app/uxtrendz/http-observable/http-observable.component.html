@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-10">
+          <table class="table">
+                  <thead class="thead-dark">
+                          <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>UserName</th>
+                              <th>Email</th>
+                          </tr>
+                  </thead>
+             
+                <tbody>
+                    <tr *ngFor="let user of users">
+                      <td>{{user.id}}</td>
+                      <td>{{user.name}}</td>
+                      <td>{{user.username}}</td>
+                      <td>{{user.email}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+    <h3>Raw:{{users}}</h3>                 
+                      
+  

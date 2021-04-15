@@ -1,0 +1,194 @@
+<!-- <div class="top-menu">
+
+ <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div> -->
+
+<!-- <div>
+<div class="courses">
+
+<course-card *ngFor="let course of courses" [course]="course">
+
+<course-image [src]="course.iconUrl"></course-image>
+
+</course-card>
+</div>
+</div> -->
+
+<!-- The Async Pipe - a Better way of passing Observable data to the View -->
+<!-- <div>
+<div class="courses">
+
+      <course-card *ngFor="let course of (courses$ | async)" [course]="course">
+      
+      <course-image [src]="course.iconUrl"></course-image>
+      
+      </course-card>
+</div>
+</div> -->
+
+<!-- <div>
+      <div class="courses" *ngIf="courses$ | async as courses">
+      
+            <course-card *ngFor="let course of courses" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+
+<!-- Angular Custom Services - The Injectable Decorator -->
+<!-- <div>
+      <div class="courses" *ngIf="courses$ | async as courses">
+      
+            <course-card *ngFor="let course of courses" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+
+
+<!-- Angular Custom Service - Data Modification with an HTTP PUT -->
+<!-- <div>
+      <div class="courses" *ngIf="courses$ | async as courses">
+      
+            <course-card highlighted *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- Angular Default Change Detection - How does it Work? -->
+<!-- <div>
+      <div class="courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- Angular OnPush Change Detection - How does it Work? -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- OnPush Change Detection and Observables Data Streams -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses" *ngIf="(courses$ | async) as courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- OnPush Change Detection and Observables Data Streams -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses" *ngIf="(courses$ | async) as courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- Angular Attribute Decorator - When to use it? -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses" *ngIf="(courses$ | async) as courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)"
+            type="'BEGINNER'" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- Angular Custom Change Detection with ChangeDetectorRef -->
+<!-- <div>
+      <div class="demo">
+            <button (click)="onEditCourse()">Edit Course</button>
+      </div>
+      <div class="courses">
+      
+            <course-card *ngFor="let course of courses" (courseChanged)="save($event)"
+            type="'BEGINNER'" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+</div> -->
+<!-- <app-life-cycle></app-life-cycle> -->
+
+
+<!--pipe-->
+<!-- <div class="top-menu">
+
+      <img class="logo"
+            src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+     
+     </div>
+    <div>
+      <div class="demo">
+            <button (click)="onEditCourse()" i18n>Edit Course</button>
+      </div>
+      <div class="courses">
+      
+            <course-card *ngFor="let course of courses | filterByCategory:'BEGINNER' " 
+            (courseChanged)="save($event)"
+            type="'BEGINNER'" [course]="course">
+            
+            <course-image [src]="course.iconUrl"></course-image>
+            
+            </course-card>
+     </div>
+    </div> -->
+
+    <!--Http-Observable-->
+    <!-- <http-observable></http-observable> -->
+    <!-- <get1></get1> -->
+    <!-- <form-data></form-data> -->
+    <!-- <promise></promise>
+    <observable></observable> -->
+    <post-request></post-request>

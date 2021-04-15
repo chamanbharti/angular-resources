@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+   <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td (click)="onDeleteProduct(i)">Delete</td>
+    </tr>
+   </tbody>
+</table>
+<button type="button" class="btn btn-warning" (click)="onFetchProducts()">Fetch Products</button>

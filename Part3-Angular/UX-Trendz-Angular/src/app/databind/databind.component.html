@@ -1,0 +1,38 @@
+<!-- <h1>1. (1) One Way Binding: Interpolation</h1>
+<p>My Name Is <b>{{name}}</b> !</p>
+<br><br><br>
+{{5+9}}
+
+<br><br><br>
+{{"Welcome "+name}}
+
+<br><br><br>
+{{"Length of name: "+name.length}}
+
+<br><br><br>
+{{"UpperCase of name: "+name.toUpperCase()}}
+
+<br><br><br>
+{{"myMethod(): "+myMethod()}}
+
+<br><br><br>
+My App Status is :{{appStatus?status1:status2}} -->
+
+ <h1>1. (2) One Way Binding: Property Binding</h1>
+ <!-- 
+     <input type="text" disabled="true" name="" id="" value="{{name}}"> Using String Interpolation<br><br> 
+     <input type="text" disabled="false" name="" id="" value="{{name}}"> Using String Interpolation<br><br> 
+    does'nt work
+-->
+<!-- <input type="text" disabled name="" id="" value="{{name}}"> Using String Interpolation<br><br>  -->
+ <!-- <input type="text" [disabled]="true" name="" id="" value="{{name}}"> Using String Interpolation<br><br>
+ <p>U can use only string value in Interpolation. U can use string concatenation</p>
+ <input type="text" name="" id="" [value]="name"> Using Property Binding<br><br>
+ <p>U can use non-string value in Property Binding. U can't use string concatenation</p>
+ <input type="text" name="" id="" bind-value="name"> Using bind-value Binding<br><br> -->
+<!-- 
+ <input type="text" [disabled]="enable" name="" id="" [value]="name">Using Property Binding<br><br>
+ <input type="text" [hidden]="!enable" name="" id="" bind-value="name"> Using bind-value Binding<br><br>
+ AppStatus:<input type="text" [disabled]="enable" name="" id="" [value]="appStatus?status1:status2">Using Property Ternary Operator<br><br>
+ 
+ -->

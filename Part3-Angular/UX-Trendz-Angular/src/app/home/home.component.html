@@ -1,0 +1,42 @@
+<div class="page-area">
+    <h2>Home</h2>
+    <p>This is home page</p>
+
+    <!-- without ng-container  -->
+    <!-- <div class="products">
+        <div *ngIf="statusOnline">
+                <div  *ngFor="let proItem of products">
+                        {{proItem.name}}
+                </div>
+        </div>
+        
+    </div> -->
+
+    <!-- <div class="products">
+            <ng-container  *ngIf="statusOnline">
+                    <div  *ngFor="let proItem of products">
+                            {{proItem.name}}
+                    </div>
+            </ng-container >
+            
+    </div> -->
+
+    <!-- using subject of rxjs -->
+    <div #box>
+        <h1>User Name is <span class="text-success">{{userName}}</span></h1>
+    </div>
+    <div class="row">
+            <div class="col-md-6">
+                    <app-comp1></app-comp1>
+            </div>
+            <div class="col-md-6">
+                <app-comp2></app-comp2>
+        </div>
+        <div class="col-md-6">
+                <app-comp3></app-comp3>
+        </div>
+        <div class="col-md-6">
+                <app-comp4></app-comp4>
+        </div>
+    </div>
+</div>

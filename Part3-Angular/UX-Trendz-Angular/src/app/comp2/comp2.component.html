@@ -1,0 +1,15 @@
+<div class="box" appTestDirective>
+    <p>Child View</p>
+    User Name: <strong>{{viewName}}</strong>
+    <br><br>
+    <!-- <input type="text" placeholder="Update Name" #uname>
+
+    <button (click)="updateUserName(uname)">Update</button>-->
+
+    <!-- using viewchild -->
+    <button (click)="clickMe()" class="text-center">Click Me</button>&nbsp;
+    <button (click)="changeColor('red')" class="text-center">Red</button>&nbsp;
+    <button (click)="changeColor('green')" class="text-center">Green</button>
+        <ng-content></ng-content>
+    <br>
+</div>

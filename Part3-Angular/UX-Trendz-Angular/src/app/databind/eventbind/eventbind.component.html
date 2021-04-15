@@ -1,0 +1,14 @@
+
+<button (click)="onAddCart()">Add to Cart</button><br><br>
+<p>{{message}}</p>
+<input type="text" value="myinputtext" (click)="onInputClick($event)">
+
+<button value="Laptop" (click)="onAddCart1($event)">Laptop</button>
+<button value="TV" (click)="onAddCart1($event)">TV</button>
+<button value="Washing Machine" (click)="onAddCart1($event)">Washing Machine</button>
+
+<p>{{message}}</p><br>
+
+<h1>Template/Local Reference Variable</h1>
+<input #inputInfo type="text" value="myinputtext" name="Chaman"><br>
+<button (click)="getInputInfo(inputInfo)">Get Info</button>

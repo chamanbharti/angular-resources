@@ -1,0 +1,47 @@
+<p>button-toggle</p>
+<div>
+    <mat-button-toggle>Toggle</mat-button-toggle>
+</div>
+
+<div>
+    <mat-button-toggle #toggleButton>Toggle</mat-button-toggle>
+    {{toggleButton.checked}}
+</div>
+
+<div>
+    <mat-button-toggle #toggleButton checked>Toggle</mat-button-toggle>
+    {{toggleButton.checked}}
+</div>
+
+<div>
+    <mat-button-toggle #toggleButton checked disableRipple>Toggle</mat-button-toggle>
+    {{toggleButton.checked}}
+</div>
+
+<p>toggle button group</p>
+
+<div>
+    <mat-button-toggle-group>
+        <mat-button-toggle value="java">Java</mat-button-toggle>
+        <mat-button-toggle value="spring">Spring</mat-button-toggle>
+        <mat-button-toggle value="hibernate">Hibernate</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroup2="matButtonToggleGroup">
+        <mat-button-toggle value="java">Java</mat-button-toggle>
+        <mat-button-toggle value="spring">Spring</mat-button-toggle>
+        <mat-button-toggle value="hibernate">Hibernate</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup2.value}}
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroup3="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="java">Java</mat-button-toggle>
+        <mat-button-toggle value="spring">Spring</mat-button-toggle>
+        <mat-button-toggle value="hibernate">Hibernate</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup3.value}}
+</div>

@@ -1,0 +1,254 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <h2>Register Product</h2>
+            <form (submit)="onFormSubmit(frmRegister.value)" #frmRegister="ngForm">
+
+                <div class="form-group">
+                    <label for="txtName">Name</label>
+                    <div>
+                        <input type="text" name="name" ngModel #txtName="ngModel" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPrice">Price</label>
+                    <div>
+                        <input type="text" name="txtPrice" ngModel #txtPrice="ngModel" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtQty">Quantity</label>
+                    <div>
+                        <input type="text" name="txtQty" ngModel #txtQty="ngModel" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lstShippedTo">Shipped To</label>
+                    <div>
+                        <select ngModel #lstShippedTo="ngModel"
+                            name="lstShippedTo" class="form-control">
+                            <option>Delhi</option>
+                            <option>Hyderabad</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>In Stock</label>
+                    <div>
+                        <input ngModel #optStock="ngModel"
+                        name="optStock" type="checkbox"> Yes
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btnblock">
+                             Register
+                        </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-4">
+            <h2>Product Object</h2>
+            <pre>
+                 {{frmRegister.value | json}}
+            </pre>
+        </div>
+
+        <div class="col-5">
+            <h2>Product Details</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd>{{frmRegister.value.txtName}}</dd>
+                <dt>Price</dt>
+                <dd>{{txtPrice.value}}</dd>
+                <dt>Qty</dt>
+                <dd>{{txtQty.value}}</dd>
+                <dt>Total</dt>
+                <dd>{{txtQty.value * txtPrice.value}}</dd>
+                <dt>Shipped To</dt>
+                <dd>{{lstShippedTo.value}}</dd>
+                <dt>Stock Status</dt>
+                <dd>{{(optStock.value==true)?"Available":"Out of Stock"}}</dd>
+            </dl>
+        </div>
+
+    </div>
+</div> -->
+
+<!-- form validation -->
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <form #frmRegister="ngForm">
+                <dl>
+                    <dt>Name</dt>
+                    <dd>
+                    <input type="text" name="txtName" ngModel
+                    #txtName="ngModel" required minlength="4">
+                    </dd>
+                    <dt>Mobile</dt>
+                    <dd>
+                    <input type="text" name="txtMobile" ngModel
+                    #txtMobile="ngModel" required pattern="\+91[0-9]{10}">
+                    </dd>
+                </dl>
+                <button [disabled]="frmRegister.invalid" class="btn btnprimary
+                btn-block">Submit</button>
+            </form>
+        </div>
+        <div class="col-9">
+        <h2>Form State Services</h2>
+            <table class="table table-hover">
+            <thead>
+            <tr>
+            <th>Service Name</th>
+            <th>Value</th>
+            </tr>
+            </thead>
+                <tbody>
+                <tr>
+                    <td>Pristine</td>
+                    <td>{{frmRegister.pristine}}</td>
+                </tr>
+                <tr>
+                    <td>Dirty</td>
+                    <td>{{frmRegister.dirty}}</td>
+                </tr>
+                <tr>
+                    <td>Invalid</td>
+                    <td>{{frmRegister.invalid}}</td>
+                </tr>
+                <tr>
+                    <td>Valid</td>
+                    <td>{{frmRegister.valid}}</td>
+                </tr>
+                <tr>
+                    <td>Submited</td>
+                    <td>{{frmRegister.submitted}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container-fluid">
+    <form #frmRegister="ngForm">
+        <dl>
+            <h2>Register User</h2>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" name="txtName" ngModel
+                #txtName="ngModel" class="form-control" required>
+                <span *ngIf="frmRegister.submitted && txtName.invalid || txtName.touched
+                && txtName.invalid" class="text-danger">Name Required</span>
+                </dd>
+                <dt>Mobile</dt>
+            <dd>
+                <input type="text" name="txtMobile" ngModel
+                #txtMobile="ngModel" class="form-control" required>
+                <span *ngIf="frmRegister.submitted && txtMobile.invalid || txtMobile.touched
+                && txtMobile.invalid" class="textdanger">
+                Mobile Required</span>
+            </dd>
+            <button class="btn btn-primary btn-block">Register</button>
+        </dl>
+    </form>
+</div> -->
+
+<!-- Errors object to handle multiple errors -->
+<!-- <div class="container-fluid">
+    <form #frmRegister="ngForm">
+        <dl>
+            <h2>Register User</h2>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" name="txtName" ngModel
+                #txtName="ngModel" class="form-control" required minlength="4">
+                <div *ngIf="txtName.touched && txtName.invalid" class="text-danger">
+                    <span *ngIf="txtName.errors.required" >Name Required</span>
+                    <span *ngIf="txtName.errors.minlength">Name too short..</span>
+                </div>
+            </dd>
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" name="txtMobile" ngModel
+                #txtMobile="ngModel" class="form-control" required pattern="\+91\d{10}">
+                <div *ngIf="txtMobile.touched && txtMobile.invalid" class="text-danger">
+                    <span *ngIf="txtMobile.errors.required">Mobile Required</span>
+                    <span *ngIf="txtMobile.errors.pattern">Invalid Mobile</span>
+                </div>
+            </dd>
+            <button [disabled]="frmRegister.invalid"  class="btn btn-primary btn-block">Register</button>
+        </dl>
+    </form>
+</div> -->
+
+<div class="container-fluid">
+    <div class="form-register">
+        <h2>Register</h2>
+        <form #frmRegister="ngForm">
+            <div class="form-group">
+                        <label>User Name</label>
+                        <div>
+                            <input ngModel #txtName="ngModel"
+                            name="txtName" type="text" class="form-control"
+                            required minlength="4">
+                            <div *ngIf="txtName.touched && txtName.invalid" class="text-danger">
+                                <span *ngIf="txtName.errors.required">Name Required</span>
+                                <span *ngIf="txtName.errors.minlength">Name too short..</span>
+                            </div>
+                        </div>
+            </div>
+                <div class="form-group">
+                    <label>Mobile</label>
+                    <div>
+                        <input type="text" name="txtMobile" ngModel
+                        #txtMobile="ngModel" class="form-control" required
+                        pattern="\+91[0-9]{10}">
+                        <div class="text-danger"
+                            *ngIf="txtMobile.touched && txtMobile.invalid">
+                            <span
+                            *ngIf="txtMobile.errors.required">Mobile
+                            Required</span>
+                            <span
+                            *ngIf="txtMobile.errors.pattern">Invalid
+                            Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label>Select Your City</label>
+                        <div>
+                            <select (change)="onCityChange(lstCity.value)"
+                            name="lstCity" ngModel #lstCity="ngModel"
+                            class="form-control">
+                            <option value="notcity">Select City</option>
+                            <option value="Hyd">Hyd</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            </select>
+                            <span *ngIf="showCityError" class="textdanger">
+                            Please Select Your City</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Even number</label>
+                        <div>
+                            <input (blur)="VerifyEven(txtEven.value)"
+                            type="text" name="txtEven" ngModel
+                            #txtEven="ngModel" class="form-control">
+                            <span class="text-danger"
+                            *ngIf="showEvenError">Not an Even Number</span>
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btnblock">Register</button>
+                </div>
+        </form>
+    </div>
+</div>

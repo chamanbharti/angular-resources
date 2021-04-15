@@ -1,0 +1,24 @@
+.page-area{
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+  min-height: 400px;
+  text-align: center;
+  background: #f7f7f7;
+}
+/* .ng-invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgb(255, 0, 0,0.09);
+} */
+
+/* input.ng-invalid,
+select.ng-invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgb(255, 0, 0,0.09);
+} */
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgb(255, 0, 0,0.09);
+}

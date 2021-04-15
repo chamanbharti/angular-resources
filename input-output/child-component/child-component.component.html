@@ -1,0 +1,9 @@
+<div style="background-color: blue;">
+    You are in child component<br>item comes from parent component<br>
+    Today's item: {{item}}
+
+</div>
+<div style="background-color: blueviolet;">
+<label>Add an item: <input #newItem></label>
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+</div>

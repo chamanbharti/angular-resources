@@ -1,0 +1,96 @@
+<div class="page-area">
+  <h2>Model Driven Form</h2>
+  <p>This is demo page</p>
+
+  <div class="row justify-content-center">
+<form novalidate [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+  <fieldset formGroupName="name">
+
+    <div class="form-group" [ngClass]="{
+      'text-danger': firstName.invalid && (firstName.dirty || firstName.touched),
+      'text-success': firstName.valid && (firstName.dirty || firstName.touched)
+      }">
+      <label>First Name</label>
+      <input type="text"
+             class="form-control" formControlName="firstName" required>
+      <div class="form-control-feedback"
+           *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+        <p *ngIf="firstName.errors.required">First Name is required</p>
+      </div>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{
+      'text-danger': lastName.invalid && (lastName.dirty || lastName.touched),
+      'text-success': lastName.valid && (lastName.dirty || lastName.touched)
+      }">
+      <label>Last Name</label>
+      <input type="text"
+             class="form-control" formControlName="lastName" required>
+      <div class="form-control-feedback"
+           *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+        <p *ngIf="lastName.errors.required">Last Name is required</p>
+      </div>
+    </div>
+    <pre>Dirty? {{ myForm.controls.name.dirty }}</pre>
+    <pre>Pristine? {{ myForm.controls.name.pristine }}</pre>
+  </fieldset>
+
+
+  <div class="form-group" [ngClass]="{
+    'text-danger': email.invalid && (email.dirty || email.touched),
+    'text-success': email.valid && (email.dirty || email.touched)
+    }">
+    <label>Email</label>
+    <input type="email"
+           class="form-control" formControlName="email" required>
+    <div class="form-control-feedback"
+         *ngIf="email.errors && (email.dirty || email.touched)">
+      <p *ngIf="email.errors.required">Email is required</p>
+      <p *ngIf="password.errors.pattern">The email address must contain at least the @ character</p>
+    </div>
+
+  <pre>Dirty? {{ myForm.controls.email.dirty }}</pre>
+  <pre>Pristine? {{ myForm.controls.email.pristine }}</pre>
+  <pre>Touched? {{ myForm.controls.email.touched }}</pre>
+  <pre>Untouched? {{ myForm.controls.email.untouched }}</pre>
+  <pre>Valid? {{ myForm.controls.email.valid }}</pre>
+  <pre>Invalid? {{ myForm.controls.email.invalid }}</pre>
+  </div>
+
+  <div class="form-group" [ngClass]="{
+    'text-danger': password.invalid && (password.dirty || password.touched),
+    'text-success': password.valid && (password.dirty || password.touched)
+    }">
+    <label>Password</label>
+    <input type="password"
+           class="form-control" formControlName="password" required>
+    <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+      <p *ngIf="password.errors.required">Password is required</p>
+      <p *ngIf="password.errors.minlength">Password must be 8 characters long, we need
+        another {{password.errors.minlength.requiredLength}} - {{password.errors.minlength.actualLength}} characters </p>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{
+    'text-danger': language.invalid && (language.dirty || language.touched),
+    'text-success': language.valid && (language.dirty || language.touched)
+    }">
+    <label>Language</label>
+    <select class="form-control" formControlName="language" required>
+      <option value="">Please select a language</option>
+      <option *ngFor="let lan of langs"
+              [value]="lan">{{lan}}
+      </option>
+    </select>
+  </div>
+  <pre>{{myForm.value | json}}</pre>
+  <div class="position-relative btn-row">
+    <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+  </div>
+
+</form>
+
+  </div>
+</div>

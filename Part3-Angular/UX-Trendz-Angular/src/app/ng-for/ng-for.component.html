@@ -1,0 +1,67 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th>Sr.N.</th>
+                                <th>Product Image</th>
+                                <th>Product Name</th>
+                                <th>Product Id</th>
+                                <th>Product Price</th>
+                            </tr>
+                    </thead>
+               
+                    <tbody>
+                        <tr *ngFor="let pro of products; index as i"> -->
+                        <!-- <tr *ngFor="let pro of products; first as i"> -->
+                        <!-- <tr *ngFor="let pro of products; last as i"> -->
+                        <!-- <tr *ngFor="let pro of products; odd as i">
+                        <tr *ngFor="let pro of products; even as i">
+                            <td># {{i}}</td>
+                            <td><img src="{{pro.proimg}}" width="70" alt="laptop" ></td>
+                            <td>{{pro.name}}</td>
+                            <td>{{pro.id}}</td>
+                            <td>{{pro.price}}</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+        <br>
+        <div class="row">
+            
+            <div class="col-md-3">
+                <input type="text"  name="" class="form-control" #userName placeholder="User Name">
+            </div>
+
+            <div class="col-md-3">
+                    <button class="btn btn-success" (click)="onCreateUser(userName)">Create User</button>
+            </div>
+
+            <div class="col-md-3">
+                    <button class="btn btn-danger" (click)="onRemoveUser()">Remove User</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; index as i">
+                            <td>{{user.name}}</td>
+                            <button class="btn btn-danger" (click)="onRemoveItem(i)">Remove Item</button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>

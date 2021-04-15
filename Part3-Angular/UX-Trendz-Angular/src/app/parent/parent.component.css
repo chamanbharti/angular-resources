@@ -1,0 +1,14 @@
+.page-area{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    min-height: 400px;
+    background: rgb(red, green, blue);
+    box-shadow: insert 0 0 107px -42px #000
+}
+.card{
+    display: inline-block;
+    margin: 0 10px 10px;
+    width:45%;
+
+}
